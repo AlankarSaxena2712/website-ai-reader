@@ -1,0 +1,42 @@
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# ===== Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ===== Node / Backend Server =====
+server/node_modules/
+server/.env
+node_modules/
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Extension =====
+ai-web-reader-extension.zip
+extension/icons/logo2.png
+
+# ===== Landing Page / Firebase =====
+landing/.firebase/
+landing/logo2.png
+.firebase/
+.firebaserc.local
+
+# ===== Misc =====
+*.log
+*.tmp
+*.zip
+Thumbs.db
+PLAN.md
