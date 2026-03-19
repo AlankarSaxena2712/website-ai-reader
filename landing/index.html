@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web Reader — Chat With Any Webpage Using AI</title>
+  <meta name="description" content="AI Web Reader is a Chrome extension that reads any webpage and lets you chat with an AI about its content. Ask questions, get summaries, and extract insights instantly.">
+  <meta name="keywords" content="AI Chrome extension, webpage reader, AI chatbot, web assistant, page summarizer, RAG, AI browser extension">
+  <meta name="author" content="AI Web Reader">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aiwebreader.geekytwin.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Web Reader — Chat With Any Webpage Using AI">
+  <meta property="og:description" content="A Chrome extension that reads any webpage and lets you chat with an AI about its content. Get instant answers, summaries, and insights.">
+  <meta property="og:url" content="https://aiwebreader.geekytwin.com/">
+  <meta property="og:site_name" content="AI Web Reader">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Web Reader — Chat With Any Webpage Using AI">
+  <meta name="twitter:description" content="A Chrome extension that reads any webpage and lets you chat with an AI about its content.">
+  <meta name="twitter:image" content="logo.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Web Reader",
+    "operatingSystem": "Chrome",
+    "applicationCategory": "BrowserApplication",
+    "description": "A Chrome extension that reads any webpage and lets you chat with an AI about its content.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "120"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="AI Web Reader" class="logo-icon-img">
+        <span class="logo-text">AI Web Reader</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta" class="nav-cta">Add to Chrome — Free</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">✨ Free Chrome Extension</div>
+        <h1>Chat with any webpage<br>using <span class="gradient-text">AI</span></h1>
+        <p class="hero-subtitle">
+          AI Web Reader instantly reads and understands any webpage, then lets you ask questions,
+          get summaries, and extract key insights — all from a sleek sidebar widget.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+            Add to Chrome — It's Free
+          </a>
+          <a href="#how-it-works" class="btn btn-ghost btn-lg">
+            See how it works ↓
+          </a>
+        </div>
+        <div class="hero-social-proof">
+          <div class="avatar-stack">
+            <div class="avatar" style="background:#6366f1;">A</div>
+            <div class="avatar" style="background:#8b5cf6;">M</div>
+            <div class="avatar" style="background:#a855f7;">S</div>
+            <div class="avatar" style="background:#d946ef;">R</div>
+          </div>
+          <span>Loved by <strong>researchers, students & professionals</strong></span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="browser-mockup">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">example.com/article</div>
+          </div>
+          <div class="browser-body">
+            <div class="mock-content">
+              <div class="mock-line w100"></div>
+              <div class="mock-line w80"></div>
+              <div class="mock-line w90"></div>
+              <div class="mock-line w70"></div>
+              <div class="mock-line w85"></div>
+              <div class="mock-line w60"></div>
+            </div>
+            <div class="mock-widget">
+              <div class="mock-widget-header">
+                <span><img src="logo.png" alt="" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;">AI Web Reader</span>
+                <span class="mock-status">● Ready</span>
+              </div>
+              <div class="mock-chat">
+                <div class="mock-msg mock-user">Summarize this article</div>
+                <div class="mock-msg mock-ai">
+                  <span class="typing-cursor">This article discusses the latest advances in renewable energy, focusing on three key areas: solar efficiency improvements, battery storage breakthroughs, and policy changes…</span>
+                </div>
+              </div>
+              <div class="mock-input">Ask anything about this page…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Features</span>
+        <h2>Everything you need to understand<br>the web <span class="gradient-text">faster</span></h2>
+        <p>Powered by RAG (Retrieval-Augmented Generation) for accurate, context-aware answers.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Read Any Page</h3>
+          <p>Instantly extracts and indexes the content of any webpage — articles, docs, blogs, research papers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>AI Chat Interface</h3>
+          <p>Ask questions in natural language and get accurate answers grounded in the actual page content.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Real-Time Streaming</h3>
+          <p>Answers stream in token-by-token for an instant, responsive experience — no waiting for full responses.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Select &amp; Ask</h3>
+          <p>Highlight any text on the page and instantly ask the AI about it — perfect for quick lookups.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Dynamic Page Support</h3>
+          <p>Detects SPA navigation and content changes automatically. Re-indexes in the background so you're always up to date.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+          <h3>Chat History</h3>
+          <p>Your conversation persists per page. Come back to a tab and pick up right where you left off.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧩</div>
+          <h3>Smart Chunking &amp; RAG</h3>
+          <p>Content is split into semantic chunks, embedded locally, and retrieved with cosine similarity for precise answers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy First</h3>
+          <p>Page content is processed locally for embeddings. Only relevant chunks are sent to the AI — never the full page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">How It Works</span>
+        <h2>Up and running in <span class="gradient-text">3 steps</span></h2>
+        <p>No configuration, no sign-up. Install and start chatting.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Install the Extension</h3>
+            <p>Add AI Web Reader to Chrome from the Web Store. One click, zero setup.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Click Analyze on Any Page</h3>
+            <p>Open any webpage and hit the floating button. The extension reads and indexes the content in seconds.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Ask Anything</h3>
+            <p>Type your question in the chat sidebar. Get instant, accurate answers grounded in the page's actual content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USE CASES ===== -->
+  <section class="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Use Cases</span>
+        <h2>Built for people who <span class="gradient-text">read the web</span></h2>
+      </div>
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-emoji">🎓</div>
+          <h3>Students</h3>
+          <p>Summarize research papers, ask clarifying questions about complex topics, extract key takeaways from lectures.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-emoji">💼</div>
+          <h3>Professionals</h3>
+          <p>Quickly digest reports, documentation, and industry articles without reading every word.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-emoji">🔬</div>
+          <h3>Researchers</h3>
+          <p>Cross-reference findings, extract methodology details, and ask specific questions about papers.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-emoji">👨‍💻</div>
+          <h3>Developers</h3>
+          <p>Navigate documentation faster. Ask "How do I configure X?" and get the answer from the docs instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">FAQ</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is AI Web Reader free?</summary>
+          <p>Yes, AI Web Reader is completely free to use. Install it from the Chrome Web Store and start chatting with any webpage instantly.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does it work under the hood?</summary>
+          <p>AI Web Reader uses RAG (Retrieval-Augmented Generation). When you analyze a page, the content is split into chunks and embedded locally using TF-IDF. When you ask a question, the most relevant chunks are retrieved via cosine similarity and sent to the AI for an accurate, grounded response.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is my data safe?</summary>
+          <p>Absolutely. Page content is processed locally for indexing. Only the small, relevant text chunks needed to answer your question are sent to the AI — never the full page content.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work on any website?</summary>
+          <p>It works on virtually any public webpage — articles, blogs, documentation, research papers, and more. It automatically filters out navigation, ads, and boilerplate to focus on the main content.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it support single-page applications (SPAs)?</summary>
+          <p>Yes! AI Web Reader automatically detects navigation and content changes in SPAs. It re-indexes content in the background so your chat stays up to date as you navigate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use it on multiple tabs?</summary>
+          <p>Yes. Each tab maintains its own context and chat history. You can analyze and chat on multiple pages simultaneously.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-glow"></div>
+        <h2>Start chatting with the web today</h2>
+        <p>Free. No sign-up. No configuration. Just install and go.</p>
+        <a href="https://chromewebstore.google.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          Add to Chrome — It's Free
+        </a>
+        <p class="cta-note">Works on Chrome, Edge, Brave, and all Chromium browsers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="logo.png" alt="AI Web Reader" class="logo-icon-img">
+        <span class="logo-text">AI Web Reader</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI Web Reader. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><img src="icons/logo.png" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;" alt="">AI Web Reader</h1>
+      <div id="status" class="status">Ready</div>
+    </div>
+
+    <div id="analyze-section" class="analyze-section">
+      <button id="analyze-btn" class="btn btn-primary">
+        📄 Analyze This Page
+      </button>
+    </div>
+
+    <div id="chat-section" class="chat-section hidden">
+      <div id="messages" class="messages"></div>
+
+      <div class="quick-actions">
+        <button class="btn btn-small" data-action="summarize">📝 Summarize</button>
+        <button class="btn btn-small" data-action="keypoints">🔑 Key Points</button>
+        <button class="btn btn-small" data-action="eli5">🧒 ELI5</button>
+      </div>
+
+      <div class="input-area">
+        <textarea
+          id="question-input"
+          placeholder="Ask anything about this page..."
+          rows="2"
+        ></textarea>
+        <button id="send-btn" class="btn btn-send" title="Send">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — AI Web Reader</title>
+  <meta name="description" content="Privacy Policy for AI Web Reader Chrome Extension. Learn how we handle your data.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aiwebreader.com/privacy.html">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .privacy-page { padding: 140px 0 100px; }
+    .privacy-page h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 8px; }
+    .privacy-page .updated { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 48px; }
+    .privacy-page h2 { font-size: 1.35rem; font-weight: 700; margin-top: 40px; margin-bottom: 12px; color: var(--text); }
+    .privacy-page p, .privacy-page li { font-size: 1rem; color: var(--text-muted); line-height: 1.8; }
+    .privacy-page ul { padding-left: 24px; margin: 12px 0; }
+    .privacy-page li { margin-bottom: 6px; }
+    .privacy-page a { color: var(--primary-bright); text-decoration: underline; text-underline-offset: 3px; }
+    .privacy-page a:hover { color: var(--primary); }
+    .privacy-content { max-width: 720px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="AI Web Reader" class="logo-icon-img">
+        <span class="logo-text">AI Web Reader</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#cta" class="nav-cta">Add to Chrome — Free</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PRIVACY POLICY ===== -->
+  <section class="privacy-page">
+    <div class="container privacy-content">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: March 19, 2026</p>
+
+      <p>AI Web Reader ("we", "our", or "the Extension") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+
+      <h2>1. Information We Collect</h2>
+      <p>AI Web Reader collects and processes the following data:</p>
+      <ul>
+        <li><strong>Page Content:</strong> When you click "Analyze", the text content of the current webpage is extracted locally in your browser.</li>
+        <li><strong>Chat Messages:</strong> Questions you type into the chat interface are processed to generate AI responses.</li>
+        <li><strong>Page URL:</strong> The URL of the analyzed page is used as an identifier to associate indexed content and chat history.</li>
+      </ul>
+      <p>We do <strong>not</strong> collect any personal information such as your name, email address, browsing history, cookies, or IP address.</p>
+
+      <h2>2. How We Process Your Data</h2>
+      <ul>
+        <li><strong>Local Embedding:</strong> Page content is split into chunks and converted into numerical embeddings (TF-IDF vectors) entirely within your browser and our backend server. No third-party embedding service is used.</li>
+        <li><strong>AI Responses:</strong> Only the small, relevant text chunks needed to answer your question are sent to the AI language model API (Cerebras). The full page content is never sent to any third party.</li>
+        <li><strong>In-Memory Storage:</strong> All indexed content and chat history are stored in server memory and are automatically deleted when the server restarts or when you close the associated browser tab.</li>
+      </ul>
+
+      <h2>3. Data Sharing</h2>
+      <p>We do not sell, trade, or transfer your data to any third parties. The only external service that receives data is the AI model provider (Cerebras), which receives:</p>
+      <ul>
+        <li>Small relevant text chunks from the analyzed page (not the full content)</li>
+        <li>Your chat question</li>
+      </ul>
+      <p>This data is sent solely to generate a response and is subject to <a href="https://cerebras.ai/privacy" target="_blank" rel="noopener noreferrer">Cerebras' Privacy Policy</a>.</p>
+
+      <h2>4. Data Storage &amp; Retention</h2>
+      <ul>
+        <li>All indexed page data and chat history are stored <strong>in-memory only</strong> — nothing is written to a database or persistent storage.</li>
+        <li>Data is automatically cleared when the server restarts.</li>
+        <li>Chat history for a page is removed approximately 60 seconds after you close all tabs viewing that page.</li>
+      </ul>
+
+      <h2>5. Permissions</h2>
+      <p>The extension requests the following Chrome permissions:</p>
+      <ul>
+        <li><strong>activeTab:</strong> To access the content of the currently active tab when you choose to analyze it.</li>
+        <li><strong>scripting:</strong> To inject the chat widget interface into web pages.</li>
+      </ul>
+      <p>These permissions are the minimum required for the extension to function. We do not request access to your browsing history, bookmarks, or any other browser data.</p>
+
+      <h2>6. Security</h2>
+      <p>We take reasonable measures to protect your data:</p>
+      <ul>
+        <li>Communication between the extension and backend uses standard HTTP protocols.</li>
+        <li>No data is persisted to disk — all processing is ephemeral and in-memory.</li>
+        <li>The extension does not inject any tracking scripts or analytics.</li>
+      </ul>
+
+      <h2>7. Children's Privacy</h2>
+      <p>AI Web Reader is not directed at children under the age of 13. We do not knowingly collect any personal information from children.</p>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. Continued use of the Extension after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>9. Contact</h2>
+      <p>If you have any questions about this Privacy Policy, please reach out to us at <a href="mailto:saxenaalankar42@gmail.com">saxenaalankar42@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="logo.png" alt="AI Web Reader" class="logo-icon-img">
+        <span class="logo-text">AI Web Reader</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI Web Reader. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
