@@ -3,7 +3,7 @@
  * Handles analysis requests and chat history per tab.
  */
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://api.aiwebreader.geekytwin.com";
 
 // Store analysis state, content hashes, and chat history per URL
 const analyzedTabs = new Map();  // url -> { contentHash, tabIds: Set }

@@ -2,7 +2,7 @@
  * Content script: extracts page content and injects the floating chat widget.
  */
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://api.aiwebreader.geekytwin.com";
 
 // ============ PAGE CONTENT EXTRACTION ============
 
